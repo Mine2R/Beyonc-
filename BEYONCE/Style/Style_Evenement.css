@@ -1,3 +1,115 @@
+/* Variables globales */
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --gold: #FFD700;
+}
+
+/* Reset + base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Header */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 0;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header nav ul li a:hover {
+    color: var(--gold);
+}
+
+.nav-header {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background-color: transparent;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+}
+
+.nav-header a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-header a:hover {
+    color: var(--gold);
+}
+
+.nav-header a.active {
+    font-weight: bold;
+}
+
+/* Navigation événements */
+.nav-evenements {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 4px 150px;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.nav-evenements a {
+    color: var(--black);
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-evenements a:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    color: var(--black);
+}
+
+/* Onglet actif - doré */
+.nav-evenements a.active {
+    color: var(--gold);
+}
+
+/* Icônes des liens */
+.nav-evenements a i {
+    color: var(--black);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-evenements a:hover i {
+    color: #f0c040;
+}
+
+/* Fond et images */
+#body-presentation {
+    position: relative;
+    background-color: rgb(20, 20, 20);
+}
+
 #body-presentation::before {
     position: absolute;
     content: "";
@@ -10,6 +122,7 @@
     z-index: -1;
 }
 
+/* Main container */
 #main-presentation {
     margin: 0 auto;
 }
@@ -20,11 +133,56 @@
     justify-content: space-between;
     align-items: center;
     width: 45vw;
-    height: 422PX;
+    height: 422px;
     margin: 50px auto 0;
     background-color: rgba(53, 45, 45, 0.3);
     border-radius: 10px;
-    padding-left: 1%;
+    padding: 1%;
+}
+.album-title {
+    background: linear-gradient(to right, #ff00cc, #cc00ff, #ff3333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+}
+
+
+.event-year {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.event {
+    background: linear-gradient(to right, #ff00cc, #cc00ff, #ff3333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+}
+.event-title {
+    background: linear-gradient(to right, #ff00cc, #cc00ff, #ff3333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+
+}
+
+
+
+/* Effet de texte plus lisible */
+h2, h3, p {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.section-presentation-img img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-out;
 }
 
 .section-presentation-img {
@@ -33,7 +191,10 @@
 
 .section-presentation-img img {
     width: 450px;
+    height: 450px;
     border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
 }
 
 .section-presentation-biographie {
@@ -41,7 +202,6 @@
     width: 300px;
     margin: 0 auto;
 }
-
 
 #ul1 {
     color: white;
@@ -69,14 +229,15 @@
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease;
     border-radius: 20px;
+    transition: transform 0.3s ease;
 }
 
 .flex-item img:hover {
     transform: scale(1.1);
 }
 
+/* Flèche animée */
 .arrow-down {
     position: absolute;
     bottom: 20px;
@@ -84,7 +245,7 @@
     transform: translateX(-50%);
     width: 40px;
     height: 40px;
-    border: 2px solid #000;
+    border: 2px solid var(--gold);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -97,12 +258,14 @@
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 15px solid #000;
+    border-top: 15px solid var(--gold);
 }
 
 h2 {
+    text-align: center;
     padding-bottom: 7%;
-    color: gold;
+    color: var(--gold);
+    text-transform: none; /* Désactive la capitalisation des titres */
 }
 
 #img1 {
@@ -126,11 +289,157 @@ h2 {
     justify-content: space-around;
 }
 
-H3 {
+/* Styling des titres "Past Events" et "Future Events" */
 
+/* Amélioration du style des articles d'événements */
+.event-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 0.5rem;
+    text-transform: none;  /* Désactive la capitalisation des titres */
+}
+
+.event-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Ajout d'une petite bordure et d'un ombrage pour l'aspect */
+.event-item {
+    background-color: #FFD700;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* Amélioration des titres dans "Past Events" et "Future Events" */
+.event-item h2 {
+    font-size: 1.8rem;  /* Taille augmentée pour les titres d'événements */
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 0.5rem;
+    text-transform: none;  /* Désactive la capitalisation des titres */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.event-item h2:hover {
+    color: var(--gold);  /* Changer la couleur au survol */
+    transform: scale(1.05);  /* Agrandir légèrement au survol */
+}
+
+.event-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.event-item p:hover {
+    color: #333;  /* Changer la couleur au survol des descriptions */
+}
+
+/* Ajout d'une bordure et ombre pour l'effet visuel sur les événements */
+.event-item {
+    background-color: #FFD700;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Ombre plus marquée */
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.event-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* Ombre renforcée au survol */
+    transform: translateY(-5px);  /* Légère élévation au survol */
+}
+
+
+
+/* Amélioration du titre principal des sections */
+h3 {
+    font-size: 2.2rem;  /* Augmenter légèrement la taille du titre principal */
+    color:  #5DADE2;
+    text-align: center;
+    padding-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+h3:hover {
+    color: var(--gold);  /* Changer la couleur du titre principal au survol */
+    transform: scale(1.05);  /* Agrandir légèrement au survol */
+}
+
+h3 {
+    font-size: 2rem;
     align-items: center;
-    color: gold;
+    color:  #5DADE2;
     text-align: center;
     padding-bottom: 15px;
     font-size: 2rem;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
 }
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+    #presentation-div-principal {
+        width: 90vw;
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .mosaic-flex {
+        flex-direction: column;
+    }
+
+    .flex-item {
+        flex: 1 1 100%;
+    }
+
+    .section-presentation-biographie {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .section-presentation-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .nav-evenements {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 1.5rem;
+        padding-bottom: 5%;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .mosaic-flex {
+        gap: 5px;
+    }
+
+    .arrow-down {
+        bottom: 10px;
+    }
+}
+
+

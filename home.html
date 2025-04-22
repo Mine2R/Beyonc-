@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow">
-    <title>Destiny'child home</title>
+    <title>BEYONCE</title>
     <link rel="stylesheet" href="BEYONCE/Style/home.css" />
     <link rel="stylesheet" href="BEYONCE/Style/styles-global.css" />
   </head>
@@ -18,29 +18,23 @@
       </section>
       <section class="container">
         <section class="members">
-          <a href="KELLY/presentation-kelly-rowland.html">
-            <article class="member">
-              <img src="BEYONCE/IMAGE/kelly.jpg" alt="Kelly Rowland" />
-              <p>Kelly Rowland</p>
-            </article></a>
-
-
-          <a href="BEYONCE/presentation-beyonce.html">
+      <a href="BEYONCE/presentation-beyonce.html">
          <article class="member">
             <img src="BEYONCE/IMAGE/beyonce.jpg" alt="Beyoncé Knowles" />
             <p>Beyoncé Knowles</p>
           </article> </a>
-
-          <a href="MICHELLE/presentation-michelle-williams.html"><article class="member">
-            <img src="BEYONCE/IMAGE/michelle.jpg" alt="Michelle Williams" />
-            <p>Michelle Williams</p>
-          </article></a>
-        </section>
-
-        <section class="section-logo">
-          <img class="logo" src="BEYONCE/IMAGE/logo.png" alt="Destiny's Child Logo" />
-        </section>
       </section>
     </main>
+    <script>
+      document.querySelectorAll('.member').forEach(member => {
+        member.addEventListener('mouseenter', () => {
+          member.style.transform = 'scale(1.05)';
+          member.style.transition = 'transform 0.3s ease';
+        });
+        member.addEventListener('mouseleave', () => {
+          member.style.transform = 'scale(1)';
+        });
+      });
+    </script>
   </body>
 </html>

@@ -1,59 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style/styles-diapo.css">
-    <link rel="stylesheet" href="Style/styles-global.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>DIAPORAMA</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="Style/styles-global.css" />
+  <link rel="stylesheet" href="Style/styles-diapo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Photos/Vidéos</title>
 </head>
 
-<body id="body-actualite">
-    <header>
+<body style="background-color: black; color: white;">
+  <header>
+    <section class="section-presentation-link">
+      <nav class="nav-presentation">
+        <a href="../home.html"><i class="fa-solid fa-house"></i></a>
+        <a href="presentation-beyonce.html">Présentation</a>
+        <a href="actualite-beyonce.html">Actualité</a>
+        <a href="RealisationsBeyonce.html">Réalisations</a>
+        <a href="EvenementsBeyonce.html">Événements passés/à venir</a>
+        <a href="diapo-beyonce.html" class="active">Photos/vidéos</a>
+      </nav>
+    </section>
+  </header>
 
-    </header>
-    <main id="main-actualite">
-        <section class="section-presentation-link">
-            <nav class="nav-presentation">
-               <a href="../home.html"><i class="fa-solid fa-house"></i></a>
-                <a href="presentation-beyonce.html">Présentation</a>
-                <a href="actualite-beyonce.html">Actualité</a>
-                <a href="RealisationsBeyonce.html">Réalisations</a>
-                <a href="EvenementsBeyonce.html">Événements passés/à venir</a>
-                <a href="diapo-beyonce.html">Photos/vidéos</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </section>
-        <h1>Photos/vidéos</h1>
-        <div class="diapo-div-principal">
-            <section class="diapo-img">
-                <img src="IMAGE/beyonce-fond-ecran.jpeg" alt="" />
-                <img src="IMAGE/beyonce-rollingStone.jpg" alt="" />
-                <video autoplay muted loop src="video/video-beyonce1.mp4" alt=""></video>
-                <img src="IMAGE/Beyonce-img.jpg" alt="" />
-                <img src="IMAGE/Beyonce-img.jpg" alt="" />
-                <img src="IMAGE/beyonce-rollingStone.jpg" alt="" />
-                <img src="IMAGE/beyonce-rollingStone.jpg" alt="" />
-                <img src="IMAGE/beyonce-vogue.jpg" alt="" />
-                <img src="IMAGE/beyonce-vogue.jpg" alt="" />
-                <video autoplay muted loop src="video/video-beyonce2.mp4" alt=""></video>
-                <img src="IMAGE/Beyonce-img.jpg" alt="" />
-                <img src="IMAGE/beyonce-fond-ecran.jpeg" alt="" />
-                <img src="IMAGE/beyonce-vogue.jpg" alt="" />
-                <img src="IMAGE/beyonce-fond-ecran.jpeg" alt="" />
-                <img src="IMAGE/beyonce-rollingStone.jpg" alt="" />
-                <video autoplay muted loop plays-inline src="video/video-beyonce3.mp4" alt=""></video>
-                <img src="IMAGE/Beyonce-img.jpg" alt="" />
-                <img src="IMAGE/beyonce-fond-ecran.jpeg" alt="" />
-                <img src="IMAGE/beyonce-vogue.jpg" alt="" />
-            </section>
+  <main>
+    <section class="diapo-container">
+        <div class="diapo-img">
+          <!-- Tes 6 images principales -->
+          <img src="IMAGE/diap1.jpg" alt="Beyoncé 1">
+          <img src="IMAGE/diap2.jpg" alt="Beyoncé 2">
+          <img src="IMAGE/diap3.jpg" alt="Beyoncé 3">
+          <img src="IMAGE/diap4.jpg" alt="Beyoncé 4">
+          <img src="IMAGE/diap5.jpg" alt="Beyoncé 5">
+          <img src="IMAGE/diap6.jpg" alt="Beyoncé 6">
+          <img src="IMAGE/diap7.jpg" alt="Beyoncé 7">
+      
+          <!-- Images supplémentaires et vidéos -->
+          <img src="IMAGE/beyonce-fond-ecran.jpeg" alt="Beyoncé Image 1">
+          <img src="IMAGE/beyonce-rollingStone.jpg" alt="Beyoncé Image 2">
+          <video autoplay muted loop src="video/video-beyonce1.mp4"></video>
+          <img src="IMAGE/Beyonce-img.jpg" alt="Beyoncé Image 3">
+          <img src="IMAGE/beyonce-vogue.jpg" alt="Beyoncé Image 4">
+          <video autoplay muted loop src="video/video-beyonce2.mp4"></video>
+          <video autoplay muted loop playsinline src="video/video-beyonce3.mp4"></video>
         </div>
+      </section>
     </main>
 
-</body>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Beyoncé - Tous droits réservés.</p>
+            <div class="social-media">
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Effet de zoom sur l'image de la page Présentation au survol
+        const img = document.querySelector('.diapo-img img');
+        if (img) {
+            img.addEventListener('mouseenter', () => {
+                img.style.transform = 'scale(1.1)';
+                img.style.transition = 'transform 0.3s ease-in-out';
+            });
 
+            img.addEventListener('mouseleave', () => {
+                img.style.transform = 'scale(1)';
+            });
+        }
+    </script>
+</body>    
 </html>
+
+

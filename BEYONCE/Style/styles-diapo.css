@@ -1,24 +1,310 @@
-/* CSS de la page actualité */
+/* Style général */
 
-.diapo-div-principal {
+:root {
+    --white: rgb(230, 230, 230);
+    --black: rgb(25, 25, 25);
+    --gold: #FFD700;
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+#body-diapo {
+    font-family: 'Arial', sans-serif; /* Uniformiser la police */
+    background-color: #000;  /* Fond noir pour le côté classe */
+    color: white;            /* Texte en blanc */
+    margin: 0;
+    padding: 0;
+}
+#body-presentation {
+    font-family: Arial, sans-serif;  /* Uniformiser la police */
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+}
+  
+/* HEADER */
+header {
+    background-color: #000;
+    padding: 10px 0;
+}
+  
+.nav-presentation {
     display: flex;
-    flex-direction: row;
-    padding: 0 50px;
-    gap: 30px;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 4px 150px;
+    background-color: var(--white);
+}
+  
+.nav-presentation a {
+    color: var(--black);
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+  
+.nav-presentation a:hover {
+    transform: scale(1.03);
+    /* couleur NE CHANGE PAS au survol */
+}
+  
+.nav-presentation .active {
+    color: var(--gold);
+}
+  
+.nav-presentation a i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+  
+.nav-presentation a:hover i {
+    transform: scale(1.1);
 }
 
+/* Header */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 0;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly; /* Espacement uniforme */
+}
+
+/* Navigation */
+.nav-presentation {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espacement entre les onglets ajusté */
+    flex-wrap: wrap;
+    padding: 4px 50px; /* Même padding que sur les autres pages */
+    background-color: var(--white);
+    text-align: center;
+}
+
+.nav-presentation a {
+    color: black; /* Liens noirs par défaut */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px; /* Padding uniforme pour l'alignement */
+    transition: color 0.3s ease;
+}
+
+/* Comportement des liens au survol */
+.nav-presentation a:hover {
+    color: #FFD700; /* Doré au survol */
+}
+
+/* Onglet actif en doré */
+.nav-presentation a.active {
+    color: #FFD700; /* Doré pour l'onglet actif */
+}
+
+/* Header identique */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 0px 0;
+}
+
+header nav ul li a:hover {
+    color: #FFD700;
+    /* Doré au survol */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    /* Espacement uniforme entre les éléments */
+}
+
+/* Navigation identique */
+.nav-presentation {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Espacement plus large entre les onglets */
+    flex-wrap: wrap;
+    padding: 4px 50px;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.nav-presentation a {
+    color: black;
+    /* Liens noirs par défaut */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px; /* Ajuster l'espace autour du texte */
+    transition: color 0.3s ease;
+}
+
+.nav-presentation a:hover {
+    color: #FFD700;
+    /* Doré au survol */
+}
+
+.nav-presentation a.active {
+    color: #FFD700;
+    /* Doré pour l'onglet actif */
+}
+
+/* Onglet actif au survol - doré */
+.nav-presentation .active:hover {
+    color: #FFD700;
+    /* Doré au survol de l'onglet actif */
+}
+
+/* Galerie photos et vidéos */
 .diapo-img {
-    column-count: 4;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colonnes flexibles */
+    gap: 0; /* Pas d'espace entre les éléments */
+    justify-items: stretch; /* Étire les éléments pour qu'ils remplissent la cellule */
+    align-items: stretch; /* Étire les éléments verticalement pour qu'ils remplissent la cellule */
 }
 
-.diapo-img img {
-    width: 100%;
-    margin: 10px 0;
+/* Images et vidéos */
+.diapo-img img,
+.diapo-img video {
+    width: 100%; /* Occupe toute la largeur de la cellule */
+    height: 100%; /* Remplir toute la hauteur de la cellule */
+    object-fit: cover; /* Garder l'aspect ratio tout en remplissant */
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de zoom sur survol */
+.diapo-img img:hover,
+.diapo-img video:hover {
+    transform: scale(1.05); /* Zoom sur l'élément */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6); /* Ombre dorée */
+}
+
+/* Galerie photos et vidéos */
+.diapo-img {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colonne flexible */
+    gap: 15px; /* Espace entre les images/vidéos */
+    justify-items: center; /* Centrer les éléments de la grille */
+}
+
+.diapo-img img,
+.diapo-img video {
+    width: 100%; /* Prend toute la largeur de la cellule de la grille */
+    height: auto;
     border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-video {
-    width: 100%;
-    margin: 10px 0;
-    flex-shrink: 0;
+/* Effet de zoom au survol */
+.diapo-img img:hover,
+.diapo-img video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
 }
+
+/* Titre de la page */
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin: 30px 0;
+    color: #FFD700;
+}
+/* FOOTER */
+footer {
+    background-color: var(--white);
+    padding: 8px 0;
+    text-align: center;
+    color: var(--black);
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.6rem;
+    font-weight: normal;
+}
+  
+.social-media {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .social-media a {
+    color: var(--black);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-media a:hover {
+    transform: scale(1.2);
+    color: red;
+  }
+/* Responsivité */
+@media (max-width: 900px) {
+    .diapo-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    .diapo-img {
+        grid-template-columns: 1fr; /* 1 colonne sur les petits écrans */
+    }
+}
+
+
+/* Responsivité */
+@media (max-width: 900px) {
+    .diapo-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    .diapo-img {
+        grid-template-columns: 1fr; /* 1 colonne sur les petits écrans */
+    }
+}
+
+

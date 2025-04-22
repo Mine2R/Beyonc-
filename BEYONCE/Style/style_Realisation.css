@@ -1,22 +1,171 @@
-/* CSS de la page Realisation */
+/* style_Realisation.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', sans-serif;
+}
 
-#ul1 {
-    font-size: 150%;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+body {
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 0px 0;
+    /* Hauteur du header */
+}
+
+header nav ul li a:hover {
+    color: #FFD700;
+    /* Doré au survol */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    /* Espacement uniforme entre les éléments */
+}
+
+h1,
+h2,
+h3 {
     text-align: center;
 }
 
-#sec2 {
-    padding-left: 8%;
-    padding-right: 10%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    border-radius: 20px;
-    align-items: baseline;
+
+
+/* Navigation */
+.nav-presentation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 4px 50px;
+    background-color: var(--white);
+    text-align: center;
 }
 
+.nav-presentation a {
+    color: black;
+    /* Liens noirs par défaut */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Liens - doré au survol */
+.nav-presentation a:hover {
+    color: #FFD700;
+    /* Doré au survol */
+}
+
+/* Onglet actif - noir par défaut */
+.nav-presentation .active {
+    color: black;
+    /* Noir pour l'onglet actif */
+}
+
+.nav-presentation a.active {
+    color: #FFD700;
+    /* Doré pour l'onglet actif */
+}
+
+
+/* Onglet actif au survol - doré */
+.nav-presentation .active:hover {
+    color: #FFD700;
+    /* Doré au survol de l'onglet actif */
+}
+
+
+/* Liens - doré au survol */
+.nav-presentation a:hover {
+    color: #FFD700;
+    /* Doré au survol */
+}
+
+.nav-presentation a i {
+    color: #000;
+    /* Icônes en noir par défaut */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-presentation a:hover i {
+    color: #f0c040;
+    /* Icônes dorées au survol */
+}
+
+.album-img {
+    width: 250px !important;
+    height: 250px !important;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Text Styling */
+.section-title {
+    font-size: 2rem;
+    color: #2C3E50 !important; /* bleu nuit */
+    font-style: italic;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h1.section-title {
+    background: none; /* Retirer le dégradé du global */
+    color: #5DADE2 !important; /* Remettre la couleur souhaitée */
+    text-shadow: none; /* Enlever le texte de l'ombre */
+    -webkit-text-fill-color: unset; /* Réinitialiser la couleur de remplissage */
+    font-size: 2rem; /* Ajuster la taille du titre si nécessaire */
+}
+
+/* Spécifiquement pour les images des albums */
+.album-section .flex-item img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.album-image img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+p {
+    font-size: 1.2rem;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: #ddd;
+}
+
+/* Section 2 */
+#sec2 {
+    padding: 5% 10%;
+    border-radius: 20px;
+    align-items: baseline;
+    background-color: #2d2d2d;
+}
+
+/* Section A1 */
 #a1 {
     display: grid;
     padding-top: 1%;
@@ -27,23 +176,15 @@
     height: 100%;
     box-shadow: 8px 0px 220px 20px #ffffff;
     text-align: center;
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-p{
-    forced-color-adjust: gold;
-    padding-top: 1%;
-    padding-bottom: 1%;
+#a1:hover {
+    transform: scale(1.05);
+    box-shadow: 8px 0px 220px 40px rgba(255, 255, 255, 0.6);
 }
 
-#ul1{
-    color: white;
-}
-
-#ul0{
-    color: gold;
-}
-
+/* Flexbox Layout for Mosaic */
 .mosaic-flex {
     display: flex;
     flex-wrap: wrap;
@@ -56,6 +197,8 @@ p{
     flex: 1 1 200px;
     overflow: hidden;
     border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flex-item img {
@@ -68,4 +211,75 @@ p{
 
 .flex-item img:hover {
     transform: scale(1.1);
+}
+
+.flex-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Agrandir uniquement les images d'albums et les rendre toutes identiques */
+.album-image img {
+    width: 350px !important;
+    height: 350px !important;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Modifier la couleur des textes sous les images */
+#ul0 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFD700;
+    margin-top: 10px;
+    text-align: center;
+    list-style: none;
+}
+
+#ul1 {
+    font-size: 1rem;
+    color: #ccc;
+    text-align: center;
+    list-style: none;
+}
+
+
+@media screen and (max-width: 900px) {
+    .mosaic-flex {
+        gap: 15px;
+    }
+
+    .flex-item {
+        flex: 1 1 45%;
+    }
+
+    #sec2 {
+        padding: 3% 5%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #sec2 {
+        padding: 3% 2%;
+    }
+
+    .flex-item {
+        flex: 1 1 100%;
+    }
+
+    #a1 {
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #ul1 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
 }

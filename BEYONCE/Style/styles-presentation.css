@@ -1,4 +1,125 @@
-/* CSS de la page presentation */
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+
+/* Header */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 0px 0;
+    /* Hauteur du header */
+}
+
+header nav ul li a:hover {
+    color: #FFD700;
+    /* Doré au survol */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    /* Espacement uniforme entre les éléments */
+}
+
+/* Navigation */
+.nav-presentation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 4px 50px;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.nav-presentation a {
+    color: black;
+    /* Liens noirs par défaut */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Liens - doré au survol */
+.nav-presentation a:hover {
+    color: #FFD700;
+    /* Doré au survol */
+}
+
+/* Onglet actif - noir par défaut */
+.nav-presentation .active {
+    color: black;
+    /* Noir pour l'onglet actif */
+}
+
+.nav-presentation a.active {
+    color: #FFD700;
+    /* Doré pour l'onglet actif */
+}
+
+
+
+/* Onglet actif au survol - doré */
+.nav-presentation .active:hover {
+    color: #FFD700;
+    /* Doré au survol de l'onglet actif */
+}
+
+
+/* Liens - doré au survol */
+.nav-presentation a:hover {
+    color: #FFD700;
+    /* Doré au survol */
+}
+
+.nav-presentation a i {
+    color: #000;
+    /* Icônes en noir par défaut */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-presentation a:hover i {
+    color: #f0c040;
+    /* Icônes dorées au survol */
+}
+
+.nav-presentation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 4px 150px;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.nav-presentation a {
+    color: var(--black);
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-presentation a:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    color: var(--black);
+}
+
+/* Fond et style global */
 #body-presentation::before {
     position: absolute;
     content: "";
@@ -6,40 +127,223 @@
     height: 100vh;
     background-image: url(/Destiny-s-Child/img/color.jpg);
     background-size: cover;
-    opacity: 0.5;
-    top: 20px;
+    opacity: 0, 7;
+    top: 0;
     z-index: -1;
 }
 
+
 #main-presentation {
     margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
 }
 
+#h1-presentation {
+    color: gold;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Autres styles de la page Présentation */
 #presentation-div-principal {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 800px;
-    height: 420px;
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
     margin: 50px auto 0;
     background-color: rgba(230, 230, 230, 0.3);
     border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#presentation-div-principal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
 }
 
 .section-presentation-img {
     display: flex;
+    flex: 1;
 }
 
 .section-presentation-img img {
-    width: 450px;
+    width: 100%;
+    height: auto;
+    max-width: 450px;
     border-radius: 10px;
-    height: 450px;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
+.section-presentation-img img:hover {
+    transform: scale(1.05);
+}
+
+
 .section-presentation-biographie {
-    text-align: justify;
-    width: 300px;
+    text-align: left;
+    /* Aligner à gauche pour l'effet naturel */
+    width: 100%;
+    max-width: 600px;
+    /* Augmenter un peu la largeur max */
     margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Garde l'alignement à gauche */
+    padding-left: 40px;
+    /* Ajouter un peu plus de marge à gauche */
+    height: auto;
+}
+
+
+
+/* Footer (identique à la page Actualité) */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #presentation-div-principal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-presentation-img img {
+        width: 100%;
+        max-width: none;
+        height: 300px;
+    }
+
+    .section-presentation-biographie {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    h1#h1-presentation {
+        font-size: 2rem;
+    }
+}
+
+/* CSS global */
+:root {
+    --white: rgb(230, 230, 230);
+    --black: rgb(25, 25, 25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    position: relative;
+    background-color: var(--black);
+}
+
+/* TITRE GÉNÉRAL */
+h1 {
+    text-align: center;
+    font-size: 8rem;
+    background: linear-gradient(to right, red, blue);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* NAVIGATION GÉNÉRALE */
+.nav-presentation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 4px 150px;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.nav-presentation a {
+    color: var(--black);
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-presentation a:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+
+}
+
+/* LIENS GÉNÉRAUX */
+a {
+    text-decoration: none;
+}
+
+/* ICONES FONT AWESOME */
+a i {
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+a i:hover {
+    transform: scale(1.2);
+}
+
+footer {
+    background-color: var(--white);
+    padding: 1px 0;
+    text-align: center;
+    color: var(--black);
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: normal;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-media a {
+    color: var(--black);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.social-media a:hover {
+    transform: scale(1.2);
+    color: red;
 }

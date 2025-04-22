@@ -24,7 +24,6 @@ body {
     object-fit: cover;
 }
 
-
 .container {
     width: 100%;
     height: 100vh;
@@ -32,12 +31,14 @@ body {
     flex-direction: column-reverse;
     align-items: center;
     justify-content: space-around;
+    padding: 20px;
 }
 
 .members {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    flex-wrap: wrap; /* Pour éviter que les éléments débordent sur petits écrans */
 }
 
 .members a {
@@ -48,19 +49,23 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 300px;
+    width: 250px;
+    margin: 20px; /* Ajoute un peu d'espacement */
 }
 
 .member:hover {
     transform: scale(1.1);
     cursor: pointer;
+    transition: transform 0.3s ease; /* Ajoute une transition douce */
 }
 
 .member p {
     font-size: 2rem;
     background: linear-gradient(to right, red, blue);
     background-clip: text;
-    color: transparent
+    color: transparent;
+    text-align: center;
+    margin-top: 10px; /* Espacement au-dessus du texte */
 }
 
 .member img {
@@ -69,12 +74,6 @@ body {
     height: 200px;
     object-fit: cover;
 }
-
-/* .section-logo {
-    border: 2px solid blue;
-    margin: 0 auto;
-    width: 50%;
-} */
 
 .logo {
     width: 500px;
@@ -93,12 +92,17 @@ body {
     }
 
     .member {
-        width: 300px;
+        width: 70%; /* Ajuste la largeur pour les écrans plus petits */
+        max-width: 300px; /* Limite la taille maximale */
     }
 
     .member img {
         width: 150px;
         height: 150px;
+    }
+
+    .logo {
+        width: 80vw; /* Ajuste la taille du logo sur les petits écrans */
     }
 }
 
@@ -106,5 +110,14 @@ body {
     .logo {
         width: 100vw;
         object-fit: cover;
+    }
+
+    .member p {
+        font-size: 1.5rem; /* Réduit la taille du texte sur les très petits écrans */
+    }
+
+    .member img {
+        width: 120px; /* Ajuste la taille de l'image pour les très petits écrans */
+        height: 120px;
     }
 }

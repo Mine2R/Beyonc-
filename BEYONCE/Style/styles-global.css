@@ -1,7 +1,7 @@
 /* CSS global */
 :root {
-  --white: rgb(230, 230, 230);
-  --black: rgb(25, 25, 25);
+    --white: rgb(230, 230, 230);
+    --black: rgb(25, 25, 25);
 }
 
 * {
@@ -21,44 +21,94 @@ body {
     background-color: var(--black);
 }
 
+/* TITRE GÉNÉRAL */
 h1 {
     text-align: center;
     font-size: 8rem;
     background: linear-gradient(to right, red, blue);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.section-presentation-link {
-    width: 100vw;
+/* NAVIGATION GÉNÉRALE */
+.nav-presentation {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
     padding: 4px 150px;
-    text-align: center;
     background-color: var(--white);
+    text-align: center;
 }
 
-.section-presentation-link a {
-    color: black;
-    padding: 0 20px;
+.nav-presentation a {
+    color: var(--black);
     font-weight: bold;
     display: inline-block;
+    padding: 10px 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.section-presentation-link a:hover {
+.nav-presentation a:hover {
     transform: scale(1.03);
     cursor: pointer;
+    color: var(--black);
 }
 
-/* Styles pour tout les <a> */
-
+/* LIENS GÉNÉRAUX */
 a {
     text-decoration: none;
 }
 
-/* Styles pour les icon font awesome */
-
+/* ICONES FONT AWESOME */
 a i {
     color: black;
+    transition: transform 0.3s ease;
 }
+
+a i:hover {
+    transform: scale(1.2);
+}
+
+footer {
+    background-color: var(--white);
+    padding: 1px 0;
+    text-align: center;
+    color: var(--black);
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: normal;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-media a {
+    color: var(--black);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.social-media a:hover {
+    transform: scale(1.2);
+    color: red;
+}
+
+
+  
